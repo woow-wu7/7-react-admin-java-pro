@@ -11,6 +11,8 @@
 
     <artifactId>controller</artifactId>
 
+    <packaging>war</packaging>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -31,5 +33,17 @@
             <artifactId>spring-web</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.woow.wu7.Application</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
