@@ -7,6 +7,8 @@
         <module>service</module>
         <module>mapper</module>
         <module>common</module>
+        <module>bean</module>
+        <module>config</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -38,6 +40,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- lombok --><!-- Lombok 的 scope=provided，说明它只在编译阶段生效，不需要打入包中 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <!--	<dependencyManagement>-->

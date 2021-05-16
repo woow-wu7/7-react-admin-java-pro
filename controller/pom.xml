@@ -19,21 +19,38 @@
     </properties>
 
     <dependencies>
+        <!-- 依赖 service 模块-->
         <dependency>
             <groupId>com.woow.wu7</groupId>
             <artifactId>service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!-- 依赖 bean 模块-->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <groupId>com.woow.wu7</groupId>
+            <artifactId>bean</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!-- 依赖 common 模块-->
+        <dependency>
+            <groupId>com.woow.wu7</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- 依赖 common 模块-->
+        <dependency>
+            <groupId>com.woow.wu7</groupId>
+            <artifactId>config</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
     </dependencies>
 
+    <!-- 多模块项目，需要将父模块中的build标签移动到controller模块中，因为controller已经变成了主模块-->
     <build>
         <plugins>
             <plugin>

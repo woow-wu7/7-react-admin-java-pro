@@ -9,26 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mapper</artifactId>
+    <artifactId>bean</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-
-    <dependencies>
-        <!-- 依赖 common 模块-->
-        <dependency>
-            <groupId>com.woow.wu7</groupId>
-            <artifactId>common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <!-- 依赖 bean 模块-->
-        <dependency>
-            <groupId>com.woow.wu7</groupId>
-            <artifactId>bean</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
 </project>
