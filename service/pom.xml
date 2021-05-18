@@ -36,6 +36,12 @@
             <artifactId>mapper</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!-- 依赖 config 模块-->
+        <dependency>
+            <groupId>com.woow.wu7</groupId>
+            <artifactId>config</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

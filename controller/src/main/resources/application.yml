@@ -3,3 +3,33 @@ server:
 myapp: # 通过 @ConfigurationProperties(prefix = "myapp") 指定
   author: woow_wu7
   email: woow.wu7@gmail.com
+  singleQuote: 'abc \n def' # ( 单引号 ) \n 直接原样输出
+  doubleQuote: "abc \n def" # ( 双引号 ) \n 会换行
+spring:
+  datasource:
+    # 1. 只要装了 ( mysql驱动 ) 和 ( jdbc数据库连接池 )，并且在这里配置好 ( 数据库连接池相关的配置项 ) 就能连接数据库
+    # 2. mysql驱动 => mysql-connector-java
+    # 3. jdbc连接池 => spring-boot-starter-jdbc
+    # 4. 更进一步：还可以使用 ( Druid数据源 + MyBatis )
+    url: jdbc:mysql://localhost:3306/7-react-admin-java?serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: root
+    dirver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc:
+      template:
+        query-timeout: 10 # 10s没查出来就超时
+  mybatis:
+    # 配置 mybatis 规则
+    # 默认的前置路径就是 resources 文件夹中
+    # 一个单词
+    #   camel 是骆驼的意思
+    #   external 是外部的意思 // external libraries外部仓库
+    #   assistant 助理 // spring assistant spring助理
+    #   framework 框架 // springframework 框架
+    # config-location: classpath:mybatis/mybatis-config.xml # mybatis全局配置文件 ( 注意：如果有下面的 configuration 就要注释掉 config-location )
+    mapper-locations: classpath:mybatis/mapper/*.xml # mybatis的sql映射文件，注意是 mapper-locations，有s
+    configuration: # 配置规则，和 mybatis-config.xml 文件中配置是一样的效果，使用一种即可，即 ( configuration ) 或者 ( config-location ) 二选一
+      map-underscore-to-camel-case: true
+  jackson:
+    date-format: YYYY-MM-dd HH:mm:ss # 全局时间格式化
+    time-zone: GMT+8 # 时区

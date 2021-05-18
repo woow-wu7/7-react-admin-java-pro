@@ -18,4 +18,6 @@ import org.springframework.stereotype.Component;
 public class TestConfigurationPropertiesAndComponentBean {
     String author;
     String email;
+    String singleQuote;
+    String doubleQuote;
 }
