@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace id resultType -->
+<!-- namespace 是 mapper文件的全路径-->
+<mapper namespace="com.woow.wu7.mapper.XmlMusicMapper">
+    <!-- id 是方法名 -->
+    <!-- 1. ( resultType ) 是方法的 ( 返回值 ) 类型，通过 copy path => copy reference 可以快速生成 -->
+    <!-- 2. ( parameterType ) ( 参数 ) 类型-->
+    <!-- 3. resultType  只用于 select -->
+    <!-- 4. parameterType 用于 insert delete update-->
+    <!--注意：resultType是bean对象时，要写bean对象的全路径-->
+    <!--注意：resultType当查找的数据库返回的是一个List<Map>时，不能写List，而是Map，其他类型类似-->
+    <select id="allList" resultType="com.woow.wu7.bean.MusicBean">
+        select * from music
+    </select>
+</mapper>

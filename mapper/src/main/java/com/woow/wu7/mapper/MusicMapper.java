@@ -1,8 +1,7 @@
 package com.woow.wu7.mapper;
 
 import com.woow.wu7.bean.MusicBean;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -14,6 +13,7 @@ public interface MusicMapper {
     @Select("SELECT * from music")
     public List<MusicBean> allList();
 
+
     // offer = pageSize * (current - 1) // limit offset,pageSize
     @Select(
             "SELECT * from music where"
@@ -24,8 +24,22 @@ public interface MusicMapper {
     )
     List<MusicBean> list(String search, Integer pageSize, Integer offset);
 
+
     @Select("select * from music where id = #{musicId}")
     MusicBean detail(Integer musicId);
 
 
+    @Insert("insert into music (name, album, singer, startTime, endTime) values" +
+            " (#{name}, #{album}, #{singer}, #{startTime}, #{endTime})")
+    Integer insert(MusicBean musicBean);
+
+
+    @Delete("delete from music where" +
+            " id=#{id}")
+    Integer delete(Integer id);
+
+    @Update("update music set " +
+            " name=#{musicBean.name}, album=#{musicBean.album}, singer=#{musicBean.singer}, startTime=#{musicBean.startTime}, endTime=#{musicBean.endTime} where " +
+            " id=#{id}")
+    Integer update(@Param("id") Integer id, @Param("musicBean") MusicBean musicBean);
 }

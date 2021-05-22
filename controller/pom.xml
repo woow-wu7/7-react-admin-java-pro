@@ -25,6 +25,12 @@
             <artifactId>service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!-- 依赖 mapper 模块-->
+        <dependency>
+            <groupId>com.woow.wu7</groupId>
+            <artifactId>mapper</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- 依赖 bean 模块-->
         <dependency>
             <groupId>com.woow.wu7</groupId>
@@ -41,6 +47,12 @@
         <dependency>
             <groupId>com.woow.wu7</groupId>
             <artifactId>config</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- 依赖 interceptor 模块-->
+        <dependency>
+            <groupId>com.woow.wu7</groupId>
+            <artifactId>interceptor</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

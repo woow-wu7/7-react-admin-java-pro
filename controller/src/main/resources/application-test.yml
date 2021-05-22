@@ -1,5 +1,5 @@
 server:
-  port: 7000
+  port: 5000
 myapp: # 通过 @ConfigurationProperties(prefix = "myapp") 指定
   author: woow_wu7
   email: woow.wu7@gmail.com
